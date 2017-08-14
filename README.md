@@ -1,6 +1,8 @@
 # CyberSecurityGame 
 A prototype of a Cyber Security Game that is meant for two players
 
+README file is best viewed through gedit for Linux or in notepad for Windows
+
 Based off the content found in this github repository: https://github.com/m3doc/Cyber
 
 Instructions for installing the game
