@@ -1,38 +1,41 @@
-# Cyber
-A Multi Player Game Based on Cyber Security
+# CyberSecurityGame 
+A prototype of a Cyber Security Game that is meant for two players
 
+Based off the content found in this github repository: https://github.com/m3doc/Cyber
 
-#####################################Instruction for installing the game#######################################
-
-Step 1. Install xampp server on your machine 
-Step 2. Copy folder cyber into the root directory of your xampp server i.e. for windows C:\\xampp\htdocs\
-	for linux \opt\lampp\htdocs
-Step 3.( In case of Linux)
-	give folder the root permission by doing chmod 777 -R /opt/lampp/htdocs/cyber/
-	(In case of windows )
-	No such thing required
+Instructions for installing the game
+Step 1. Install Xampp server on your machine
+	1a) Go to https://www.apachefriends.org/download.html
+	1b) Download Xampp version no greater than 5.6 with a PHP version no greater than 5.6
+	For Linux: 
+	1c) In the terminal give the xampp-linux-x64-5.6.3-0-installer.run file permission by entering command: "sudo chmod +x xampp-linux-x64-5.6.3-0-installer.run
+	1d) Then enter the command: "sudo ./xampp-linux-x64-5.6.3-0-installer.run"
+	1e) After running the installer setup the xampp server
+	1f) Enter the command: "sudo /opt/lampp/lampp start" to start the Xampp service
+	1g) Then in your browser enter http://localhost/ to verify that the server is running
+	1h) Enter the command: "sudo /opt/lampp/lampp security" to configure the security settings of the server
+	1i) The Xampp server has now been succesfully installed 
+	For Windows: 
+	1j) Open the CD or DVD drive from My Computer, install the program, and click on run
+	1k) When given the initial installation prompt just hit the enter key and accept the default settings
+	1l) Once the installation is finished start the Xampp control panel 
+	1m) Start the Apache and MYSQL services 
+	1n) Verify the Apache and MYSQL installations by clickling on the administration link for both
+	1o) Then enter http://localhost/ to verify that the server is running
+	1p) The Xampp server has now been succesfully installed 
+Step 2. Copy the folder "cyber" into the root directory of your xampp server. For Windows C:\\xampp\htdocs\
+	For Linux \opt\lampp\htdocs
+Step 3. For Linux: give the folder root permission by doing the command: chmod 777 -R /opt/lampp/htdocs/cyber/
+	For Windows: Not required 
 Step 4. Install the database in the xampp server
-	start xampp server with apache and mysq service
-	Go to browser open localhost/phpmyadmin
-	Create a database named "acs_cyber" or any name of your choice
-	Open the Sql prompt on the same page for "acs_cyber" database
-	paste the content of database file acs_cyber.sql provided in database folder outside of this directory
-	Enter Go.
-Step 5. Change the credentials in configuration file
-	open cyber/application/config/database.php
-	change the following according to your setting of the server and database(If you have changed them)
-	$db['default']['hostname'] = 'localhost';
-	$db['default']['username'] = 'root';
-	$db['default']['password'] = '';
-	$db['default']['database'] = 'acs_cyber';
-Step 6. If you plan to upload this game on another web server
-	open file cyber/application/config/config.php
-	change the value of url in the following with your url like 'http://jagmohan.acslab.org/cyber/'
-	$config['base_url']	= 'http://localhost/cyber/';
-Step 7. Now you are ready with the deployment
+	4a) Start xampp server with apache and mysq service
+	4b) Go to browser open localhost/phpmyadmin
+	4c) Create a database named "acs_cyber" or any name of your choice
+	4d) Open the Sql prompt on the same page in the "acs_cyber" database
+	4e) Paste the content of the file acs_cyber.sql provided in the cyber_master folder 
+	4f) Enter Go.
+Step 5. Now you are ready with the deployment
 	Register at least two players and start playing with each other.
-Step 8. For any problem and query contact 1308js@gmail.com.
-
 	
 	
 
