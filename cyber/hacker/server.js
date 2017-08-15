@@ -25,6 +25,6 @@ $( document ).ready( function() {
       }
 
       $.register_command( 'help', function() {
-        return '<pre>Please use the following commands:<br>  man             Shows how to use a command <br>  nmap            scans the webserver to find the running services <br>  Vulnerability   Searches for the vulnerabilities in a service from internet<br>  eSearch         Searches for the expolit of a vulnerability from internet<br>  use_exploit     sets the exploit to be used for hacking the webserver<br>  set_target      Sets the webserver which is to be hacked <br>  set_port        Sets the port on which the exploit will be used <br>  exploit         exploits the vulnerability to gain the system access<br>  change          Changes the service you want to hack<br>  cls             Clears the screen<br> '
+        return '<pre>Please use the following commands:<br>  man             Shows how to use a command <br>  nmap            scans the web server to find the running services <br>  Vulnerability   Searches for the vulnerabilities in a service from internet<br>  eSearch         Searches for the exploit of a vulnerability from internet<br>  use_exploit     sets the exploit to be used for hacking the webserver<br>  set_target      Sets the webserver which is to be hacked <br>  set_port        Sets the port on which the exploit will be used <br>  exploit         exploits the vulnerability to gain the system access<br>  change          Changes the service you want to hack<br>  cls             Clears the screen<br> '
 
       });
