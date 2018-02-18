@@ -10,6 +10,7 @@ finalphrases = ["We are here to study the existence of your inferior race", "We 
 transsimple = [];
 transmedium = [];
 transfinal = [];
+solved = [];
 dict = {};
 function assign() {
 	for(let x = 0; x < 26; x++) {
@@ -34,17 +35,34 @@ function transto(phrase) {
 	}
 	return transed;
 }
-assign();
-for(let i = 0; i < 3; i++) {
+function initreveal() {
+	used = [];
+	for(let x = 0; x < 5; x++) {
+		var rand = Math.round(Math.random() * 26);
+		if(used.indexOf(rand) > -1) {
+			x--;
+		} else {
+			solved.push(alphabet[rand]);
+		}
+	}
+	console.log(solved);
+}
+function main() {
+	assign();
+	initreveal();
+
+}
+main();
+/*for(let i = 0; i < 3; i++) {
 	transsimple.push(transto(simplephrases[i]));
 	transmedium.push(transto(mediumphrases[i]));
 	transfinal.push(transto(finalphrases[i]));
 	console.log(transsimple);
 	console.log(transmedium);
 	console.log(transfinal);
-}
-var button = document.getElementById("start");
+}*/
+/*var button = document.getElementById("start");
 button.addEventListener("click", function() {
 
-}, false);
+}, false);*/
 }	
