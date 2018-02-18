@@ -33,6 +33,13 @@ url("./assets/alien.png");}
   </head>
 
   <body id="page-top">
+    <p>
+      Time Left: <span id="timeLeft"></span>
+    </p>
+    <div id="game">
+    </div>
+
+
 
     <!--   
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -146,8 +153,8 @@ By now nuclear power has been targeted on four of the seven remaining space craf
  -->
     
     <!--    <div id="map"></div> -->
-                        <a href="index.html"> Go back to the Home Page </a>
-                        <a href="index.html"> Quit game </a>
+                        <a href="index.html"> Go back to the Home Page (to either restart or quit game) </a>
+                    
 
     <!-- Footer -->
     <footer>
@@ -169,9 +176,12 @@ By now nuclear power has been targeted on four of the seven remaining space craf
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
 
-     <script>
+    <script src="timer.js"></script>
+    <script>
 window.confirm("Earth is counting on you! Are you ready?");
 </script>
+
+
 
 
   </body>
