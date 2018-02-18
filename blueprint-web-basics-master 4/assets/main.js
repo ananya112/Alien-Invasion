@@ -35,6 +35,24 @@ function transto(phrase) {
 	}
 	return transed;
 }
+function transfrom(phrase) {
+	transphrase = phrase;
+	for(let x = 0; x < phrase.length; x++) {
+			if(phrase[x] == " ") {
+				let pass = "pass";
+			} else {
+
+			for(let i = 0; i < 26; i++) {
+				if(dict[alphabet[i]] == phrase[x]) {
+					if(used.indexOf(alphabet[i]) > -1) {
+						transphrase = transphrase.replace(phrase[x], dict[alphabet[x]]);
+					}
+				}
+			}
+		}
+	}
+	return transphrase;
+}
 function initreveal() {
 	used = [];
 	for(let x = 0; x < 5; x++) {
@@ -47,20 +65,45 @@ function initreveal() {
 	}
 	console.log(solved);
 }
+
+function simplerandom() {
+	for(let x = 0; x < 2; x++) {
+		rand = Math.round(Math.random() * 2 - x);
+		let phrase = simplephrase[rand];
+		simplephrases.pop(rand);
+		return phrase;
+	}
+}
+function mediumrandom() {
+	for(let x = 0; x < 2; x++) {
+		rand = Math.round(Math.random() * 2 - x);
+		let phrase = mediumphrases[rand];
+		mediumphrases.pop(rand);
+		return phrase;
+	}
+}
+function finalrandom() {
+	for(let x = 0; x < 2; x++) {
+		rand = Math.round(Math.random() * 2 - x);
+		let phrase = finalphrases[rand];
+		simplephrases.pop(rand);
+		return phrase;
+	}
+}
 function main() {
 	assign();
 	initreveal();
-
-}
-main();
-/*for(let i = 0; i < 3; i++) {
+	for(let i = 0; i < 3; i++) {
 	transsimple.push(transto(simplephrases[i]));
 	transmedium.push(transto(mediumphrases[i]));
 	transfinal.push(transto(finalphrases[i]));
 	console.log(transsimple);
 	console.log(transmedium);
 	console.log(transfinal);
-}*/
+	console.log(transfrom(simplerandom()));
+}
+}
+main();
 /*var button = document.getElementById("start");
 button.addEventListener("click", function() {
 
