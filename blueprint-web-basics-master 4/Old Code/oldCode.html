@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alien Invasion</title>
+  <!--  Below you will see a bunch of meta tags. From w3schools, "The <meta> tag 
+  provides metadata about the HTML document. Metadata will not be displayed on 
+  the page, but will be machine parsable."
+  Essentially, these tags add data that the browser can parse and do stuff about.
+  Link here: https://www.w3schools.com/tags/tag_meta.asp
+  -->
+  <!-- List of possible meta tags: https://gist.github.com/kevinSuttle/1997924 -->
+
+  <!-- Specify the character encoding for the HTML document 
+  Link here: https://www.w3schools.com/tags/att_meta_charset.asp -->
+  <meta charset="UTF-8">
+  <!-- makes your web page more mobile friendly. 
+  Link here: https://www.w3schools.com/css/css_rwd_viewport.asp  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML,CSS">
+  <meta name="author" content="Your name goes here!">
+  
+  <!-- Link the stylesheet for this web page -->
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <script type="text/javascript" src="assets/main.js"></script>
+</head>
+<!--
+FOR THE WORKSHOP, IGNORE THE ABOVE. 
+
+IF YOU ARE MORE CURIOUS, YOU CAN ASK DURING HACKATHON OR WITH HELP QUEUE. 
+I DO NOT EXPECT THAT IT WILL MAKE SENSE TO EVERYONE EASILY, BUT THIS IS GOOD 
+EXPOSURE. AT LEAST YOU KNOW WHAT'S UP.
+
+WE FOCUS ON THE TEXTS BELOW.
+
+INSERT INFORMATIONS ABOUT YOURSELF. THEN, OPEN THE FILE INDEX.HTML
+-->
+<style>
+body
+{ background-image:
+url("./assets/alien.png");}
+#cat { width: 200px;
+}
+</style>
+<body>
+<h1>My First Website</h1>
+<h2>What's This</h2>
+<p>
+  I am learning how to make websites through <a href="https://blueprint.hackmit.org/">BluePrint</a>, and I think it's cool! I can <span class="highlight">highlight</span> random things, or add styling to specific <span id="unique-text">texts by their ids!</span>
+</p>
+<p>
+  By the way, this link to <a href="https://blueprint.hackmit.org/" target="_blank">BluePrint</a> will open a new page, but the previous one will not. SAD.
+</p>
+<h2>About Me</h2>
+<p>
+  <!-- Insert your name and where you're from -->
+  It is the year 3024. An alien species has dominated the Earth. After each invasion by these foreign beings, we've discovered and recorded new messages they've left for us. As one of Washingtin D.C.'s top linguists, you have been assigned a task and a team to decode these findings. <
+  <ul>
+    <li>Web development</li>
+    <li>...</li>
+    <!-- Add more items -->
+  </ul>
+</p>
+<p>
+  My ranking of food is the following:
+  <ol>
+    <li>Cinnamon Rolls</li>
+    <li>Spaghettis</li>
+    <!-- Add more items -->
+  </ol>
+</p>
+<h2>Also...</h2>
+<p>
+  Pusheen is cool! 
+  <br>
+  <!-- this works -->
+  <img id="cat" src="./assets/pusheen.gif" />
+  <!-- this also works -->
+</p>
+<button id = "start">Try it</button>
+
+<a href = "directions.html"><button>Directions</a>
+
+</body>
+</html>
