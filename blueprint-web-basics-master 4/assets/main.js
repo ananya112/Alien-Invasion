@@ -1,7 +1,5 @@
 window.onload = function() {
 
-console.log("test")
-
 alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 characters = ["⌇", "⌆", "⌅", "⌁", "҂", "؏", "۽", "۾", "৺", "୰", "௳", "౿", "൹", "༓", "༜", "༴", "༸", "࿂", "᎓", "᎔", "᎕", "᎘", "᎙", "℥", "⅊", "⇃"];
 simplephrases = ["Take us to your leader", "We come in peace", "We are an alien species"];
@@ -56,13 +54,15 @@ function transfrom(phrase) {
 }
 function initreveal() {
 	let used = [];
+	console.log(initial);
 	for(let x = 0; x < 5; x++) {
 		var rand = Math.round(Math.random() * initial.length);
-		if(used.indexOf(rand) > -1) {
+		if(used.indexOf(initial[rand]) > -1) {
+			console.log(used.indexOf(initial[rand]	));
 			x--;
 		} else {
 			solved.push(initial[rand]);
-			used.push(initial[rand]);
+			used.push(initial[rand]);	
 		}
 	}
 	console.log(solved);
@@ -103,22 +103,25 @@ function main() {
 	console.log(transmedium);
 	console.log(transfinal);
 }
-	console.log(transfrom(simplerandom()));
 	let initialphrase = simplerandom();
 	for(let x = 0; x < initialphrase.length; x++) {
-		for(i = 0; i < 26; i++) {
-			if(dict[alphabet[i]] == initialphrase[x]) {
-				if(globalused.indexOf[alphabet[i]] > -1) {
-					let pass = "pass";
-				} else {
-					initial.push(alphabet[i]);
-					globalused.push(alphabet[i]);
+		if(initialphrase[x] == " ") {
+			let pass2 = "pass";
+		} else {
+			for(i = 0; i < 26; i++)
+				if(dict[alphabet[i]] == initialphrase[x]) {
+					if(globalused.indexOf(alphabet[i]) > -1) {
+						let pass = "pass";
+					} else {
+						initial.push(alphabet[i]);
+						globalused.push(alphabet[i]);
+					}
 				}
 			}
 		}
-	}
 	initreveal();
-}
+	console.log(transfrom(initialphrase));
+	}
 main();
 /*var button = document.getElementById("start");
 button.addEventListener("click", function() {

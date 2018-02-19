@@ -1,0 +1,3 @@
+if you want to add a specific folder to the github repository without adding any other specific changes you've made,
+you can cd to the folder it's in do git add "name_of_file.extension", then commit and push
+I figured that one out after realizing I overwrote anyanyas code.
