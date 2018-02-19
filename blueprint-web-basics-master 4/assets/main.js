@@ -11,21 +11,20 @@ transfinal = [];
 solved = [];
 initial = [];
 dict = {};
-globalused = [];
 function assign() {
 	for(let x = 0; x < 26; x++) {
-		assign = Math.round(Math.random() * (25 - x));
+		let assign = Math.round(Math.random() * (25 - x));
 		dict[alphabet[x]] = characters[assign];
 		characters.splice(assign,1);
-		console.log(assign);
+		/*console.log(assign);
 		console.log(characters);
-		console.log(dict[alphabet[x]]);
+		console.log(dict[alphabet[x]]);*/
 	}
 	console.log(dict);
 }
 
 function transto(phrase) {
-	transed = phrase.toUpperCase();
+	let transed = phrase.toUpperCase();
 	for(let x = 0; x < phrase.length; x++) {
 		if(transed[x] == " ") {
 			pass = "pass";
@@ -36,21 +35,22 @@ function transto(phrase) {
 	return transed;
 }
 function transfrom(phrase) {
-	transphrase = phrase;
+	var totrans = phrase;
 	for(let x = 0; x < phrase.length; x++) {
-			if(phrase[x] == " ") {
+			if(totrans[x] == " ") {
 				let pass = "pass";
 			} else {
 			for(let i = 0; i < 26; i++) {
-				if(dict[alphabet[i]] == phrase[x]) {
+				if(dict[alphabet[i]] == totrans[x]) {
 					if(solved.indexOf(alphabet[i]) > -1) {
-						transphrase = transphrase.replace(phrase[x], alphabet[i]);
+						totrans = totrans.replace(totrans[x], alphabet[i]);
 					}
 				}
 			}
 		}
 	}
-	return transphrase;
+	console.log(totrans);
+	return totrans;
 }
 function initreveal() {
 	let used = [];
@@ -58,7 +58,7 @@ function initreveal() {
 	for(let x = 0; x < 5; x++) {
 		var rand = Math.round(Math.random() * initial.length);
 		if(used.indexOf(initial[rand]) > -1) {
-			console.log(used.indexOf(initial[rand]	));
+			/*console.log(used.indexOf(initial[rand]));*/
 			x--;
 		} else {
 			solved.push(initial[rand]);
@@ -70,7 +70,7 @@ function initreveal() {
 
 function simplerandom() {
 	for(let x = 0; x < 2; x++) {
-		rand = Math.round(Math.random() * 2 - x);
+		let rand = Math.round(Math.random() * 2 - x);
 		let phrase = transsimple[rand];
 		simplephrases.pop(rand);
 		return phrase;
@@ -78,7 +78,7 @@ function simplerandom() {
 }
 function mediumrandom() {
 	for(let x = 0; x < 2; x++) {
-		rand = Math.round(Math.random() * 2 - x);
+		let rand = Math.round(Math.random() * 2 - x);
 		let phrase = transmedium[rand];
 		mediumphrases.pop(rand);
 		return phrase;
@@ -86,45 +86,54 @@ function mediumrandom() {
 }
 function finalrandom() {
 	for(let x = 0; x < 2; x++) {
-		rand = Math.round(Math.random() * 2 - x);
+		let rand = Math.round(Math.random() * 2 - x);
 		let phrase = transfinal[rand];
 		simplephrases.pop(rand);
 		return phrase;
 	}
 }
+function scrolltext(phrase) {
+	console.log(phrase);
+	var speed = 60;
+	var alientext = document.getElementById("alientext");
+	for(let x = 0; x < phrase.length; x++) {
+		alientext.innerHTML += phrase.charAt(i);
+		setTimeout(scrolltext,speed);
+	}
+}
 function main() {
 	assign();
 	for(let i = 0; i < 3; i++) {
-		console.log(i);
 	transsimple.push(transto(simplephrases[i]));
 	transmedium.push(transto(mediumphrases[i]));
 	transfinal.push(transto(finalphrases[i]));
-	console.log(transsimple);
+	/*console.log(transsimple);
 	console.log(transmedium);
-	console.log(transfinal);
+	console.log(transfinal);*/
 }
-	let initialphrase = simplerandom();
+	var initialphrase = simplerandom();
+	let used = [];
 	for(let x = 0; x < initialphrase.length; x++) {
 		if(initialphrase[x] == " ") {
 			let pass2 = "pass";
 		} else {
 			for(i = 0; i < 26; i++)
 				if(dict[alphabet[i]] == initialphrase[x]) {
-					if(globalused.indexOf(alphabet[i]) > -1) {
+					if(used.indexOf(alphabet[i]) > -1) {
 						let pass = "pass";
 					} else {
 						initial.push(alphabet[i]);
-						globalused.push(alphabet[i]);
+						used.push(alphabet[i]);
 					}
 				}
 			}
 		}
 	initreveal();
 	console.log(transfrom(initialphrase));
+	testsimple = transfrom(initialphrase);
+	console.log(testsimple);
+	scrolltext(testsimple);
 	}
-main();
-/*var button = document.getElementById("start");
-button.addEventListener("click", function() {
-
-}, false);*/
+var button = document.getElementById("play_button");
+button.addEventListener("click", main, false);
 }	
